@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-puma
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployment-puma 
+  template:
+    metadata:
+      labels:
+        app: deployment-puma
+    spec:
+      containers:
+       - name: puma
+         image: <image>
+         ports:
+          - containerPort: 3000
+         resources:
+          limits:
+           memory: 250mi
+           cpu: 250mi
+      imagePullSecrets:
+       - name: regred
