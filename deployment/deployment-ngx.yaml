@@ -13,13 +13,13 @@ spec:
         app: deployment-ngx
     spec:
       containers:
-       - name: ngx
-         image: <tag>
-         ports:
-          - containerPort: 3000
-         resources:
-          limits:
-           memory: 250mi
-           cpu: 250mi
+        - name: ngx
+          image: hello
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: 250mi
+              cpu: 250mi
       imagePullSecrets:
-       - name: regred
+        - name: regred
