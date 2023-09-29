@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-puma
+  name: deployment-ngx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: deployment-puma
+      app: deployment-ngx
   template:
     metadata:
       labels:
-        app: deployment-puma
+        app: deployment-ngx
     spec:
       containers:
-        - name: puma
+        - name: ngx
           image: hello
           ports:
             - containerPort: 3000
